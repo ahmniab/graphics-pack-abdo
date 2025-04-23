@@ -1,0 +1,45 @@
+<table class="table table-sm table-striped table-bordered text-center"> 
+    <thead>
+    <tr>
+        <th>k</th>
+        <th>x</th>
+        <th>y</th>
+        <th>(x,y)</th>
+        
+    </tr>
+    </thead> 
+    <tbody> 
+    @if (ShapePoints.Any())
+    {
+        
+        @foreach (PointInfo p in ShapePoints)
+        {
+            <tr>
+                <td>@(k++)</td>
+                <td>@p.x.ToString("0.00")</td>
+                <td>@p.y.ToString("0.00")</td>
+                <td>(@Math.Round(p.x),@Math.Round(p.y))</td>
+            </tr>
+        }
+        
+    }
+    else
+    {
+        <tr>
+            <td colspan="5" class="text-center">
+                No Points
+            </td>
+        </tr>
+    }
+    </tbody> 
+</table>
+
+    
+@code
+{
+
+    [Parameter] 
+    public IEnumerable<PointInfo> ShapePoints { get; set; } = [];
+    private int k = 0;
+
+}

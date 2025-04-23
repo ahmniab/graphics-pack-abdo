@@ -1,0 +1,35 @@
+@page "/Transformations/Shearing"
+@inject TransformationsFactory Factory
+@inject TransformationsState TranState
+
+<h3>Shearing</h3>
+<EditForm Model="@_shearingModel" OnValidSubmit="HandleValidSubmit" class="row g-3">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div class="col-md-4">
+        <label for="Delta_X" class="form-label">Skew X</label>
+        <input type="number" min="0" step="any" class="form-control" id="Delta_X" @bind-value="_shearingModel.ShearX">
+    </div>
+    <div class="col-md-4">
+        <label for="Delta_Y" class="form-label">Skew Y</label>
+        <input type="number" min="0" step="any" class="form-control" id="Delta_Y" @bind-value="_shearingModel.ShearY">
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</EditForm>
+
+@code {
+    ShearingModel _shearingModel = new ShearingModel { ShearX = 1, ShearY = 1 };
+
+    public async Task HandleValidSubmit()
+    {
+        Factory.AddTransformation(_shearingModel);
+        _shearingModel = new ShearingModel { ShearX = 1, ShearY = 1 };
+        await InvokeAsync(Factory.ApplyAndSave);
+        await InvokeAsync(TranState.NotifyStateChanged);
+    }
+}

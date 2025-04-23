@@ -1,0 +1,47 @@
+@page "/Transformations/Reflection"
+@inject TransformationsFactory Factory
+@inject TransformationsState TranState
+
+<h3>Reflection</h3>
+
+<EditForm Model="@ReflectionModel" OnValidSubmit="HandleValidSubmit" class="row g-3">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div class="col-md-4">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" @bind="ReflectionModel.HorizontalReflection"  id="HorizontalReflection">
+            <label class="form-check-label" for="HorizontalReflection">
+                Horizontal Reflection
+            </label>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" @bind="ReflectionModel.VerticalReflection"  id="VerticalReflection">
+            <label class="form-check-label" for="VerticalReflection">
+                Vertical Reflection
+            </label>
+        </div>
+    </div>
+
+
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</EditForm>
+@code {
+    ReflectionModel ReflectionModel = new ReflectionModel ();
+
+    public async Task HandleValidSubmit()
+    {
+        Factory.AddTransformation(ReflectionModel);
+        ReflectionModel = new ReflectionModel();
+        await InvokeAsync(Factory.ApplyAndSave);
+        await InvokeAsync(TranState.NotifyStateChanged);
+    }
+
+
+}

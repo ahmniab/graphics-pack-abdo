@@ -1,0 +1,57 @@
+@page "/Draw/Ellipse"
+
+
+<h3>Draw Ellipse</h3>
+<EditForm Model="@ellipse" OnValidSubmit="HandleValidSubmit" class="row g-3">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div class="col-md-4">
+        <label for="XStart" class="form-label">X</label>
+        <input type="number" class="form-control" id="XStart" @bind-value="ellipse.X">
+    </div>
+    <div class="col-md-4">
+        <label for="YStart" class="form-label">Y</label>
+        <input type="number" class="form-control" id="YStart" @bind-value="ellipse.Y">
+    </div>
+    <div class="col-md-4"></div>
+
+    <div class="col-md-3">
+        <label for="RadiusX" class="form-label">Radius x</label>
+        <InputNumber class="form-control" id="RadiusX" @bind-value="ellipse.RX">
+        </InputNumber>
+    </div>
+    <div class="col-md-3">
+        <label for="RadiusY" class="form-label">Radius Y</label>
+        <InputNumber class="form-control" id="RadiusY" @bind-value="ellipse.RY">
+        </InputNumber>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Draw</button>
+    </div>
+</EditForm>
+<br/>
+<br/>
+<EllipseTable ShapePoints="@points"></EllipseTable>
+@code {
+
+    private static int id = 1;
+    EllipsePointInfo[] points = [];
+    private EllipseModel ellipse = new EllipseModel
+    {
+        name = $"Ellipse{id++}",
+        X = 0,
+        Y = 0,
+        RX = 10,
+        RY = 10,
+        color = "#613583"
+    };
+
+    private async Task HandleValidSubmit(EditContext obj)
+    {
+        points = (ellipse.GetIndexes() as IEnumerable<EllipsePointInfo>)?.ToArray() ?? [];
+    }
+
+}

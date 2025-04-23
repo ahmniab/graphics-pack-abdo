@@ -1,0 +1,35 @@
+@page "/Transformations/Scaling"
+@inject TransformationsFactory Factory
+@inject TransformationsState TranState
+
+<h3>Scaling</h3>
+<EditForm Model="@_scalingModel" OnValidSubmit="HandleValidSubmit" class="row g-3">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div class="col-md-4">
+        <label for="Delta_X" class="form-label">Scale X</label>
+        <input type="number" min="0" step="any" class="form-control" id="Delta_X" @bind-value="_scalingModel.ScaleX">
+    </div>
+    <div class="col-md-4">
+        <label for="Delta_Y" class="form-label">Scale Y</label>
+        <input type="number" min="0" step="any" class="form-control" id="Delta_Y" @bind-value="_scalingModel.ScaleY">
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</EditForm>
+
+@code {
+    ScalingModel _scalingModel = new ScalingModel { ScaleX = 1, ScaleY = 1 };
+
+    public async Task HandleValidSubmit()
+    {
+        Factory.AddTransformation(_scalingModel);
+        _scalingModel = new ScalingModel { ScaleX = 1, ScaleY = 1 };
+        await InvokeAsync(Factory.ApplyAndSave);
+        await InvokeAsync(TranState.NotifyStateChanged);
+    }
+}

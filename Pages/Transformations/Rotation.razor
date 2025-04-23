@@ -1,0 +1,32 @@
+@page "/Transformations/Rotation"
+@inject TransformationsFactory Factory
+@inject TransformationsState TranState
+
+<h3>Rotation</h3>
+<EditForm Model="@RotationModel" OnValidSubmit="HandleValidSubmit" class="row g-3">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div class="col-md-4">
+        <label for="Delta_X" class="form-label">Angel (Deg) </label>
+        <input type="number" step="any" class="form-control" id="Delta_X" @bind-value="RotationModel.AngleDeg">
+    </div>
+    
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</EditForm>
+@code {
+    RotationModel RotationModel = new RotationModel { AngleDeg = 0};
+
+    public async Task HandleValidSubmit()
+    {
+        Factory.AddTransformation(RotationModel);
+        RotationModel = new RotationModel { AngleDeg = 0};
+        await InvokeAsync(Factory.ApplyAndSave);
+        await InvokeAsync(TranState.NotifyStateChanged);
+    }
+    
+}

@@ -1,0 +1,133 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Graphics
+build_property.RootNamespace = Graphics
+build_property.ProjectDir = /home/ahmniab/src/Graphics/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/ahmniab/src/Graphics
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/Circle.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9DaXJjbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/CircleBresTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9DaXJjbGVCcmVzVGFibGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/DrawLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9EcmF3TGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/DrawRouted.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9EcmF3Um91dGVkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/Ellipse.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9FbGxpcHNlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/EllipseTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9FbGxpcHNlVGFibGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/LineBresenham.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9MaW5lQnJlc2VuaGFtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/LineBresTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9MaW5lQnJlc1RhYmxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/LineDDA.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9MaW5lRERBLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/LineDDATable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9MaW5lRERBVGFibGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9fSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/Reflection.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1JlZmxlY3Rpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/Rotation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1JvdGF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/Scaling.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1NjYWxpbmcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/Shearing.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1NoZWFyaW5nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/TransformationOutput.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1RyYW5zZm9ybWF0aW9uT3V0cHV0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/TransformationsInfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1RyYW5zZm9ybWF0aW9uc0luZm8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/TransformationsLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1RyYW5zZm9ybWF0aW9uc0xheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/TransformationsRouted.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1RyYW5zZm9ybWF0aW9uc1JvdXRlZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/Translation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL1RyYW5zbGF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL19JbXBvcnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Draw/Main.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJhdy9NYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/Transformations/Main.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmb3JtYXRpb25zL01haW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ahmniab/src/Graphics/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

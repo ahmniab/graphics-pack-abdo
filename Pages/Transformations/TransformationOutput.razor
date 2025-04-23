@@ -1,0 +1,18 @@
+@inject TransformationsState TransformationsState;
+@inject TransformationsFactory Factory
+
+<div class="trans-out">
+    <img src="@(Factory.ImageSrc + $"?v={DateTime.Now.Ticks}")">
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        TransformationsState.OnChange += StateHasChanged;
+
+    }
+    public void Dispose()
+    {
+        TransformationsState.OnChange -= StateHasChanged;
+    }
+}

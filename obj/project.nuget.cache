@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "vRFVUUKAG1M=",
+  "success": true,
+  "projectFilePath": "/home/ahmniab/src/Graphics/Graphics.csproj",
+  "expectedPackageFiles": [
+    "/home/ahmniab/.nuget/packages/sixlabors.imagesharp/3.1.6/sixlabors.imagesharp.3.1.6.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SixLabors.ImageSharp' 3.1.6 has a known high severity vulnerability, https://github.com/advisories/GHSA-2cmq-823j-5qj8",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
+}

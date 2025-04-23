@@ -1,0 +1,65 @@
+@inherits LayoutComponentBase
+@inject TransformationsFactory Factory
+@inject TransformationsState TransformationsState
+
+
+<div class="container-fluid">
+     
+    <div class="row p-2">
+        <div class="col">
+            @Body
+            <br>
+            <TransformationOutput></TransformationOutput>
+        </div>
+        <div class="col-2 nav-menu">
+            <div class="d-grid gap-1">
+                <NavLink class="nav-menu-item"
+                         href="/Transformations/Translation"
+                         ActiveClass="selected"
+                         Match="NavLinkMatch.Prefix"> Translation
+                </NavLink>
+                <NavLink class="nav-menu-item"
+                         href="/Transformations/Scaling"
+                         ActiveClass="selected"
+                         Match="NavLinkMatch.Prefix"> Scaling
+                </NavLink>
+                <NavLink class="nav-menu-item"
+                         href="/Transformations/Rotation"
+                         ActiveClass="selected"
+                         Match="NavLinkMatch.Prefix"> Rotation
+                </NavLink>
+                <NavLink class="nav-menu-item"
+                         href="/Transformations/Reflection"
+                         ActiveClass="selected"
+                         Match="NavLinkMatch.Prefix"> Reflection
+                </NavLink>
+                <NavLink class="nav-menu-item"
+                         href="/Transformations/Shearing"
+                         ActiveClass="selected"
+                         Match="NavLinkMatch.Prefix"> Shearing
+                </NavLink>
+
+                <button class="btn btn-danger" style="margin: auto"
+                        onclick="@(new Action<object>(e => Reset()))">
+                    Reset
+                </button>
+            </div>
+            <br>
+            
+        </div>
+
+
+
+    </div>
+</div>
+
+@code
+{
+    
+    private void Reset()
+    {
+        Factory.Reset();
+        Factory.ApplyAndSave();
+        TransformationsState.NotifyStateChanged();
+    }
+}

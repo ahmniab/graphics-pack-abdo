@@ -1,0 +1,47 @@
+@inject TransformationsFactory Factory
+@inject TransformationsState TransformationsState
+
+<h3>Transformations</h3>
+@foreach (var t in Factory)
+{
+    <div class="alert @TransformationCssClass(t)" role="alert">
+        @t.Name
+        <div>
+            
+            <i class="fa-solid fa-trash"
+               onclick="@(new Action<object>(async e => await DeleteShape(t)))">
+                
+            </i>
+        </div>
+    </div>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        TransformationsState.OnChange += StateHasChanged;
+
+    }
+    public void Dispose()
+    {
+        TransformationsState.OnChange -= StateHasChanged;
+    }
+
+
+    private async Task DeleteShape(ITransformation t)
+    {
+        Factory.DeleteTransformation(t);
+        Factory.ApplyAndSave();
+        await InvokeAsync(() => TransformationsState.NotifyStateChanged());
+    }
+
+    private string TransformationCssClass(ITransformation t) => t switch
+        {
+            TranslationModel => "alert-info",
+            ScalingModel     => "alert-warning",
+            RotationModel    => "alert-primary",
+            ReflectionModel  => "alert-dark",
+            _                => "alert-danger"
+        };
+    
+}
