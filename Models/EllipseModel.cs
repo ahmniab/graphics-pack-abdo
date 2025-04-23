@@ -12,8 +12,6 @@ public class EllipseModel : IShape
             throw new NonValidAlgorithmException();
     }
 
-    public string name { get; set; } = "Ellipse";
-    public string? color { get; set; }
     public string? ImgSrc { get; set; }
     public AlgorithmType Algorithm { get; set; } = AlgorithmType.MidPointEllipse;
     public double X { get; set; }

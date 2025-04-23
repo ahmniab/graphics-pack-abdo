@@ -44,12 +44,9 @@
 
 @code {
     
-    private static int id = 1;
     BresPointInfo[] points = [];
     private LineModel line = new LineModel
     {
-        name = $"Line{id++}", 
-        color = "#000000", 
         Algorithm = AlgorithmType.BresenhamLine,
         XStart = 0,
         XEnd = 0,

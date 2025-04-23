@@ -37,16 +37,13 @@
 <EllipseTable ShapePoints="@points"></EllipseTable>
 @code {
 
-    private static int id = 1;
     EllipsePointInfo[] points = [];
     private EllipseModel ellipse = new EllipseModel
     {
-        name = $"Ellipse{id++}",
         X = 0,
         Y = 0,
         RX = 10,
         RY = 10,
-        color = "#613583"
     };
 
     private async Task HandleValidSubmit(EditContext obj)

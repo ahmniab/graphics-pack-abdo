@@ -33,14 +33,11 @@
 
 @code {
     
-    private static int id = 1;
     BresPointInfo[] points = [];
     private CircleModel circle = new CircleModel
     {
-        name = $"circle{id++}",
         X = 0,
         Y = 0,
-        color = "#eb5e34"
     };
 
     private async Task HandleValidSubmit(EditContext obj)

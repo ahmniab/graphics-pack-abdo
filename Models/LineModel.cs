@@ -9,9 +9,6 @@ public class LineModel : IShape
     public int XEnd { get; set; }
     public int YEnd { get; set; }
 
-    public string name { get; set; } = "Line";
-    public string? color { get; set; }
-
     public string? ImgSrc { get; set; }
     public AlgorithmType Algorithm { get; set; }
 
