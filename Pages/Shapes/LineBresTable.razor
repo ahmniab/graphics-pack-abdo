@@ -1,0 +1,45 @@
+<table class="table table-sm table-striped table-bordered text-center"> 
+    <thead>
+    <tr>
+        <th>k</th>
+        <th>P<sub>k</sub></th>
+        <th>(x<sub>k+1</sub>, y<sub>k+1</sub>)</th>
+            
+    </tr>
+    </thead> 
+    <tbody> 
+    @if(ShapePoints.Any()){
+        @foreach (BresPoint p in ShapePoints)
+        {
+            <tr>
+                <td>@(k++)</td>
+                <td>@p.Pk</td>
+                <td>(@p.x, @p.y)</td>
+            </tr>
+            // Console.WriteLine($"Table: ({p.x}, {p.y})");
+
+
+        }
+    }
+    else{
+        <tr>
+            <td colspan="5" class="text-center">
+                No Points
+            </td>
+        </tr>
+    }
+
+    </tbody> 
+</table>
+
+    
+@code
+{
+
+    [Parameter] 
+    public BresPoint[] ShapePoints { get; set; }
+    
+    private int k = 0;
+    
+
+}

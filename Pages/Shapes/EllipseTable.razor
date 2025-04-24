@@ -1,0 +1,39 @@
+<table class="table table-sm table-striped table-bordered text-center">
+    <thead>
+    <tr>
+        <th>k</th>
+        <th>P1<sub>k</sub></th>
+        <th>(x<sub>k+1</sub>, y<sub>k+1</sub>)</th>
+        <th>2r<sup>2</sup><sub>y</sub>x<sub>k+1</sub></th>
+        <th>2r<sup>2</sup><sub>x</sub>y<sub>k+1</sub></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @if(ShapePoints.Any()){
+        @for (int k = 0, i = 4; i < ShapePoints.Length; i += 4 , k++ )
+        {
+            <tr>
+                <td>@k</td>
+                <td>@ShapePoints[i].PK</td>
+                <td>(@ShapePoints[i].x, @ShapePoints[i].y)</td>
+                <td>@ShapePoints[i].dx</td>
+                <td>@ShapePoints[i].dy</td>
+            </tr>
+        }
+    }
+    else{
+        <tr>
+            <td colspan="5" class="text-center">
+                No Points
+            </td>
+        </tr>
+    }
+
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public EllipsePoint[] ShapePoints { set; get; }
+}

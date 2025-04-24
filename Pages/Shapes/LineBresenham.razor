@@ -1,0 +1,60 @@
+@page "/Shapes/LineBresenham"
+@page "/Shapes"
+
+
+<h3>Draw Line Bresenham</h3>
+<EditForm Model="@line" OnValidSubmit="HandleValidSubmit" class="row g-3">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div class="col-md-4">
+        <label for="XStart" class="form-label">x1</label>
+        <input type="number" class="form-control" id="XStart" @bind-value="line.X1">
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <label for="YStart" class="form-label">y1</label>
+        <input type="number" class="form-control" id="YStart" @bind-value="line.Y1">
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <label for="XEnd" class="form-label">x2</label>
+        <input type="number" class="form-control" id="XEnd" @bind-value="line.X2">
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <label for="YEnd" class="form-label">x2</label>
+        <input type="number" class="form-control" id="YEnd" @bind-value="line.Y2">
+    </div>
+
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Draw</button>
+    </div>
+</EditForm>
+<br/>
+<br/>
+<LineBresTable ShapePoints="@points" />
+
+@code {
+    
+    BresPoint[] points = [];
+    private LineBresModel line = new LineBresModel
+    {
+        X1 = 0,
+        X2 = 0,
+        Y1 = 0,
+        Y2 = 0
+    };
+    
+    private async Task HandleValidSubmit()
+    {
+        points = (line.GetAllPoints() as IEnumerable<BresPoint>)?.ToArray() ?? [];
+    }
+}

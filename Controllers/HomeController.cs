@@ -6,8 +6,8 @@ namespace Graphics.Controllers;
 
 public class HomeController : Controller
 {
-    public IActionResult Index()
+    public IActionResult Index(string url="/Shapes")
     {
-        return View();
+        return Redirect(url);
     }
 }

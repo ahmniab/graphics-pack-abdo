@@ -3,7 +3,7 @@
 @inject TransformationsState TranState
 
 <h3>Rotation</h3>
-<EditForm Model="@RotationModel" OnValidSubmit="HandleValidSubmit" class="row g-3">
+<EditForm Model="@RotationModel" OnValidSubmit="Submit" class="row g-3">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -15,12 +15,16 @@
     
 
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">Apply</button>
     </div>
 </EditForm>
 @code {
     RotationModel RotationModel = new RotationModel { AngleDeg = 0};
 
+    public async Task Submit()
+    {
+        InvokeAsync(HandleValidSubmit);
+    }
     public async Task HandleValidSubmit()
     {
         Factory.AddTransformation(RotationModel);

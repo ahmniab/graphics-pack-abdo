@@ -1,0 +1,54 @@
+@page "/Shapes/Ellipse"
+
+
+<h3>Draw Ellipse</h3>
+<EditForm Model="@ellipse" OnValidSubmit="HandleValidSubmit" class="row g-3">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div class="col-md-4">
+        <label for="XStart" class="form-label">X</label>
+        <input type="number" class="form-control" id="XStart" @bind-value="ellipse.x">
+    </div>
+    <div class="col-md-4">
+        <label for="YStart" class="form-label">Y</label>
+        <input type="number" class="form-control" id="YStart" @bind-value="ellipse.y">
+    </div>
+    <div class="col-md-4"></div>
+
+    <div class="col-md-3">
+        <label for="RadiusX" class="form-label">Radius x</label>
+        <InputNumber class="form-control" id="RadiusX" @bind-value="ellipse.Rx">
+        </InputNumber>
+    </div>
+    <div class="col-md-3">
+        <label for="RadiusY" class="form-label">Radius Y</label>
+        <InputNumber class="form-control" id="RadiusY" @bind-value="ellipse.Ry">
+        </InputNumber>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Calculate</button>
+    </div>
+</EditForm>
+<br/>
+<br/>
+<EllipseTable ShapePoints="@points"></EllipseTable>
+@code {
+
+    EllipsePoint[] points = [];
+    private EllipseModel ellipse = new EllipseModel
+    {
+        x = 0,
+        y = 0,
+        Rx = 10,
+        Ry = 10,
+    };
+
+    private async Task HandleValidSubmit(EditContext obj)
+    {
+        points = (ellipse.GetAllPoints() as IEnumerable<EllipsePoint>)?.ToArray() ?? [];
+    }
+
+}

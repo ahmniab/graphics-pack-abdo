@@ -28,14 +28,14 @@
     }
 
 
-    private async Task DeleteShape(ITransformation t)
+    private async Task DeleteShape(Transformation t)
     {
         Factory.DeleteTransformation(t);
         Factory.ApplyAndSave();
         await InvokeAsync(() => TransformationsState.NotifyStateChanged());
     }
 
-    private string TransformationCssClass(ITransformation t) => t switch
+    private string TransformationCssClass(Transformation t) => t switch
         {
             TranslationModel => "alert-info",
             ScalingModel     => "alert-warning",

@@ -4,7 +4,7 @@
 
 <h3>Reflection</h3>
 
-<EditForm Model="@ReflectionModel" OnValidSubmit="HandleValidSubmit" class="row g-3">
+<EditForm Model="@ReflectionModel" OnValidSubmit="Submit" class="row g-3">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -29,11 +29,16 @@
 
 
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">Apply</button>
     </div>
 </EditForm>
 @code {
     ReflectionModel ReflectionModel = new ReflectionModel ();
+
+    public async Task Submit()
+    {
+        InvokeAsync(HandleValidSubmit);
+    }
 
     public async Task HandleValidSubmit()
     {

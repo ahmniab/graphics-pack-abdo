@@ -1,5 +1,4 @@
-using Graphics.Models;
-using Graphics.Graphics;
+using Graphics.Models.Transformations;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +30,6 @@ app.UseStaticFiles(new StaticFileOptions
 });
 app.MapRazorPages();
 app.MapBlazorHub();
-app.MapFallbackToPage("/Draw/{*catchall}", "/Draw/Main");
+app.MapFallbackToPage("/Shapes/{*catchall}", "/Shapes/Main");
 app.MapFallbackToPage("/Transformations/{*catchall}", "/Transformations/Main");
 app.Run();

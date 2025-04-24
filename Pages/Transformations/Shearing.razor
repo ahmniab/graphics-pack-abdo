@@ -3,7 +3,7 @@
 @inject TransformationsState TranState
 
 <h3>Shearing</h3>
-<EditForm Model="@_shearingModel" OnValidSubmit="HandleValidSubmit" class="row g-3">
+<EditForm Model="@_shearingModel" OnValidSubmit="Submit" class="row g-3">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -18,13 +18,17 @@
     </div>
 
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">Apply</button>
     </div>
 </EditForm>
 
 @code {
     ShearingModel _shearingModel = new ShearingModel { ShearX = 1, ShearY = 1 };
 
+    public async Task Submit()
+    {
+        InvokeAsync(HandleValidSubmit);
+    }
     public async Task HandleValidSubmit()
     {
         Factory.AddTransformation(_shearingModel);

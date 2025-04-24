@@ -39,10 +39,16 @@
                          Match="NavLinkMatch.Prefix"> Shearing
                 </NavLink>
 
-                <button class="btn btn-danger" style="margin: auto"
-                        onclick="@(new Action<object>(e => Reset()))">
+                <button class="btn btn-danger" 
+                        style="margin: auto"
+                        onclick="@(new Action<object>(e => InvokeAsync(Reset)))">
                     Reset
                 </button>
+                <a class="btn btn-primary"
+                         style="margin: auto"
+                         href="/Home/Index?url=/Shapes"
+                         Match="NavLinkMatch.Prefix"> Shapes
+                </a>
             </div>
             <br>
             
@@ -56,10 +62,10 @@
 @code
 {
     
-    private void Reset()
+    private async Task Reset()
     {
         Factory.Reset();
         Factory.ApplyAndSave();
-        TransformationsState.NotifyStateChanged();
+        await InvokeAsync(TransformationsState.NotifyStateChanged);
     }
 }

@@ -5,7 +5,7 @@
  
 
 <h3>Translation</h3>
-<EditForm Model="@TranslationModel" OnValidSubmit="HandleValidSubmit" class="row g-3">
+<EditForm Model="@TranslationModel" OnValidSubmit="Submit" class="row g-3">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -20,12 +20,16 @@
     </div>
 
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">Apply</button>
     </div>
 </EditForm>
 @code {
     TranslationModel TranslationModel = new();
 
+    public async Task Submit()
+    {
+        InvokeAsync(HandleValidSubmit);
+    }
     public async Task HandleValidSubmit()
     {
         Factory.AddTransformation(TranslationModel);

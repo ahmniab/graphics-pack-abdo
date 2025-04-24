@@ -1,0 +1,45 @@
+@inherits LayoutComponentBase 
+
+
+<div class="container">
+     
+    <div>
+        @Body
+    </div> 
+    <div>
+        <NavLink class="btn btn-outline-danger" 
+                 href="/Shapes/LineDDA" 
+                 ActiveClass="btn-danger text-white" 
+                 Match="NavLinkMatch.Prefix"> Line DDA 
+        </NavLink> 
+        <NavLink class="btn btn-outline-danger"  
+                 href="/Shapes/LineBresenham" 
+                 ActiveClass="btn-danger text-white" 
+                 Match="NavLinkMatch.Prefix"> Line Bresenham
+        </NavLink> 
+        <NavLink
+            class="btn btn-outline-danger"
+            href="/Shapes/Circle"
+            ActiveClass="btn-danger text-white"
+            Match="NavLinkMatch.Prefix">
+            Circle
+        </NavLink>
+        <NavLink
+            class="btn btn-outline-danger"
+            href="/Shapes/Ellipse"
+            ActiveClass="btn-danger text-white"
+            Match="NavLinkMatch.Prefix">
+            Ellipse
+        </NavLink>
+        <a
+            class="btn btn-primary"
+            href="Home/Index?url=/Transformations"
+            Match="NavLinkMatch.Prefix">
+            Transformations
+        </a>
+        
+    </div> 
+    <br/>
+        
+        
+</div>
