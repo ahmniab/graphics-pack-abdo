@@ -1,0 +1,14 @@
+<h4>shape</h4>
+<div class="d-flex align-items-center justify-content-center">
+    <div class="board board-big border">
+        @if (imgURL != null)
+        {
+            <img src="@imgURL">
+        }
+        <img src="/assets/imgs/grid-line.png">
+    </div>
+</div>
+@code {
+    [Parameter]
+    public string? imgURL { get; set; }
+}

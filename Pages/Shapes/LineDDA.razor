@@ -40,6 +40,7 @@
 </EditForm>
 <br/>
 <br/>
+<Board imgURL="@line.ImgSrc"></Board>
 <LineDDATable ShapePoints="@points" />
 
 
@@ -50,11 +51,17 @@
         X1 = 0,
         X2 = 0,
         Y1 = 0,
-        Y2 = 0
+        Y2 = 0,
+        ImgSrc = null
     };
-    
-    private async Task HandleValidSubmit()
+
+    private void HandleValidSubmit() => InvokeAsync(Draw);
+    private async Task Draw()
     {
         points = line.GetAllPoints()?.ToArray() ?? [];
+        ImageBuilder builder = new();
+
+        line.ImgSrc = $"{builder.SetShape(line).Builed().Save("LineDDA")}?v={DateTime.Now.Ticks}";
+        StateHasChanged();
     }
 }

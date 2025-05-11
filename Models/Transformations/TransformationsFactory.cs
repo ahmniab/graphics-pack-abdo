@@ -7,13 +7,13 @@ namespace Graphics.Models.Transformations;
 
 public class TransformationsFactory : IEnumerable<Transformation>
 {
-    public string ImageSrc { get; set; } = "assets/imgs/penguin.png";
+    public string ImageSrc { get; set; } = "assets/imgs/TImage.png";
     Image<Rgba32> image;
     private Rgba32[,] input;
     public TransformationsFactory()
     {
-        ImageSrc  = "assets/imgs/penguin.png";
-        image = ImageHelper.LoadPenguinImage();
+        ImageSrc  = "assets/imgs/TImage.png";
+        image = ImageHelper.LoadTImage();
         input = new Rgba32[image.Width, image.Height];
         ResetInput();
     }
@@ -28,7 +28,7 @@ public class TransformationsFactory : IEnumerable<Transformation>
     
     public void Reset()
     {
-        ImageSrc = "assets/imgs/penguin.png";
+        ImageSrc = "assets/imgs/TImage.png";
         Transformations.Clear();
     }
 

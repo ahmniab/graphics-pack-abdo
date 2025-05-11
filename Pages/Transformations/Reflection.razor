@@ -44,8 +44,8 @@
     {
         Factory.AddTransformation(ReflectionModel);
         ReflectionModel = new ReflectionModel();
-        await InvokeAsync(Factory.ApplyAndSave);
-        await InvokeAsync(TranState.NotifyStateChanged);
+        Factory.ApplyAndSave();
+        TranState.NotifyStateChanged();
     }
 
 

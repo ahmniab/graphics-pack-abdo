@@ -33,7 +33,7 @@
     {
         Factory.AddTransformation(_scalingModel);
         _scalingModel = new ScalingModel { ScaleX = 1, ScaleY = 1 };
-        await InvokeAsync(Factory.ApplyAndSave);
-        await InvokeAsync(TranState.NotifyStateChanged);
+        Factory.ApplyAndSave();
+        TranState.NotifyStateChanged();
     }
 }

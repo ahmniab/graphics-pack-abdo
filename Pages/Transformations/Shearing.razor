@@ -33,7 +33,7 @@
     {
         Factory.AddTransformation(_shearingModel);
         _shearingModel = new ShearingModel { ShearX = 1, ShearY = 1 };
-        await InvokeAsync(Factory.ApplyAndSave);
-        await InvokeAsync(TranState.NotifyStateChanged);
+        Factory.ApplyAndSave();
+        TranState.NotifyStateChanged();
     }
 }

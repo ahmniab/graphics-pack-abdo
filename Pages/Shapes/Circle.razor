@@ -29,6 +29,7 @@
 </EditForm>
 <br/>
 <br/>
+<Board imgURL="@circle.ImgSrc"></Board>
 <CircleBresTable ShapePoints="@points" />
 
 @code {
@@ -40,9 +41,13 @@
         Y = 0,
     };
 
-    private async Task HandleValidSubmit(EditContext obj)
+    private void HandleValidSubmit() => InvokeAsync(Draw);
+    private async Task Draw()
     {
         points = (circle.GetAllPoints() as IEnumerable<BresPoint>)?.ToArray() ?? [];
+        ImageBuilder builder = new();
+        circle.ImgSrc = $"{builder.SetShape(circle).Builed().Save("circle")}?v={DateTime.Now.Ticks}";
+        StateHasChanged();
     }
 
 }

@@ -30,11 +30,16 @@
     {
         InvokeAsync(HandleValidSubmit);
     }
-    public async Task HandleValidSubmit()
+    public void HandleValidSubmit() => InvokeAsync(Draw);
+    public async Task Draw()
     {
         Factory.AddTransformation(TranslationModel);
-        TranslationModel = new TranslationModel();
-        await InvokeAsync(Factory.ApplyAndSave);
-        await InvokeAsync(TranState.NotifyStateChanged);
+        TranslationModel = new TranslationModel
+        {
+            delta_x = TranslationModel.delta_x,
+            delta_y = TranslationModel.delta_y
+        };
+        Factory.ApplyAndSave();
+        TranState.NotifyStateChanged();
     }
 }

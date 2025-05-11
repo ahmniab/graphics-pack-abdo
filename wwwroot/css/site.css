@@ -3,6 +3,7 @@
 }
 .board {
     position: relative;
+    border: none !important;
 }
 .board-big{
     width: 512px;

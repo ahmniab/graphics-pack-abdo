@@ -24,9 +24,9 @@ public static class ImageHelper
             throw new OutOfImageBoundException();
         return FinalY;
     }
-    public static Image<Rgba32> LoadPenguinImage()
+    public static Image<Rgba32> LoadTImage()
     {
-        return Image.Load<Rgba32>("wwwroot/assets/imgs/penguin.png");
+        return Image.Load<Rgba32>("wwwroot/assets/imgs/TImage.png");
     }
         
 }

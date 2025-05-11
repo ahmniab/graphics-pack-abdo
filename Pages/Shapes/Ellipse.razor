@@ -34,7 +34,9 @@
 </EditForm>
 <br/>
 <br/>
+<Board imgURL="@ellipse.ImgSrc"></Board>
 <EllipseTable ShapePoints="@points"></EllipseTable>
+
 @code {
 
     EllipsePoint[] points = [];
@@ -46,9 +48,14 @@
         Ry = 10,
     };
 
-    private async Task HandleValidSubmit(EditContext obj)
+    private async Task HandleValidSubmit() => InvokeAsync(Draw);
+    private async Task Draw()
     {
         points = (ellipse.GetAllPoints() as IEnumerable<EllipsePoint>)?.ToArray() ?? [];
+        ImageBuilder builder = new();
+
+        ellipse.ImgSrc = $"{builder.SetShape(ellipse).Builed().Save("ellipse")}?v={DateTime.Now.Ticks}";
+        StateHasChanged();
     }
 
 }

@@ -40,6 +40,7 @@
 </EditForm>
 <br/>
 <br/>
+<Board imgURL="@line.ImgSrc"></Board>
 <LineBresTable ShapePoints="@points" />
 
 @code {
@@ -52,9 +53,14 @@
         Y1 = 0,
         Y2 = 0
     };
-    
-    private async Task HandleValidSubmit()
+
+    private void HandleValidSubmit() => Draw();
+    private async Task Draw()
     {
         points = (line.GetAllPoints() as IEnumerable<BresPoint>)?.ToArray() ?? [];
+        ImageBuilder builder = new();
+
+        line.ImgSrc = $"{builder.SetShape(line).Builed().Save("LineBresenham")}?v={DateTime.Now.Ticks}";
+        StateHasChanged();
     }
 }
