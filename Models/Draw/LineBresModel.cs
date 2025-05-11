@@ -22,7 +22,7 @@ public class LineBresModel : Shape
     private void SetOctantNumber()
     {
         double slope = (Y2 - Y1) / (double)(X2 - X1);
-        if (0 < slope && slope < 1) // Octant 1 or 5
+        if (0 < slope && slope <= 1) // Octant 1 or 5
         {
             if (X1 < X2)
                 OctantNumber = 1;
